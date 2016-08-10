@@ -16,7 +16,7 @@ module.exports = {
         app: './src/router.jsx',
         vendor: ["react", "react-dom", "react-bootstrap", "react-router", "react-intl"]
     },
-    output: { path: __dirname + "/dist", filename: 'bundle.js' },
+    output: { path: __dirname + "/build", filename: 'bundle.js' },
     module: {
         loaders: [
             {

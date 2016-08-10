@@ -4,7 +4,7 @@ import Router from 'react-router/lib/Router'
 import Route from 'react-router/lib/Route'
 import hashHistory from 'react-router/lib/hashHistory'
 import IndexRoute from 'react-router/lib/IndexRoute'
-
+import Intl from 'intl';
 import Index from './Index.jsx';
 import Home from './pages/home.jsx';
 import Annee from './pages/annee.jsx';
