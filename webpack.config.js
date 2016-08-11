@@ -11,10 +11,10 @@ const GLOBALS = {
 };
 
 module.exports = {
-    devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
+    devtool: DEBUG ? 'source-map' : false,
     entry: {
         app: './src/router.jsx',
-        vendor: ["react", "react-dom", "react-bootstrap", "react-router", "react-intl"]
+        vendor: ["react", "react-dom", "react-bootstrap", "react-router", "react-intl", "react-router-bootstrap", "intl", "react-intl/locale-data/fr", "react-intl/locale-data/en", "jquery", "bootstrap-datepicker"]
     },
     output: { path: __dirname + "/build", filename: 'bundle.js' },
     module: {
@@ -29,7 +29,7 @@ module.exports = {
                 query: {
                     cacheDirectory: DEBUG,
                     "presets": ["es2015", "stage-0", "react"],
-                    "plugins": ["react-hot-loader/babel"]
+                    "plugins": DEBUG ? ["react-hot-loader/babel"] : []
                 }
             },
             {test: /\.css$/,  loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
@@ -56,14 +56,14 @@ module.exports = {
         cachedAssets: VERBOSE,
     },
     plugins: [
-        new ExtractTextPlugin("css/styles.css"),
-        new webpack.optimize.OccurrenceOrderPlugin(true),
+        new ExtractTextPlugin("styles.css"),
         new webpack.optimize.CommonsChunkPlugin(name="vendor", filename="vendor.bundle.js"),
         ...DEBUG ? [
 
             new webpack.HotModuleReplacementPlugin(),
 
         ] : [
+            new webpack.optimize.OccurrenceOrderPlugin(true),
             new webpack.optimize.DedupePlugin(),
 
             new webpack.optimize.UglifyJsPlugin({

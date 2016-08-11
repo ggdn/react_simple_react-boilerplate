@@ -1,0 +1,14 @@
+import frtrad from "./fr.json"
+import entrad from "./en.json"
+
+var messages = {
+    // output by server conditional
+    'fr-FR': {
+        'INLINE': 'fr',
+    },
+    'en-US': {
+        'INLINE': 'en',
+    },
+};
+
+export default Messages;

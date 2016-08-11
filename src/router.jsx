@@ -8,8 +8,8 @@ import Intl from 'intl';
 import Index from './Index.jsx';
 import Home from './pages/home.jsx';
 import Annee from './pages/annee.jsx';
-import Bootstrap from './assets/css/bootstrap.min.css';
-import Bootstraptheme from './assets/css/bootstrap.min.css';
+import Bootstrap from './assets/css/bootstrap.css';
+import Bootstraptheme from './assets/css/bootstrap-theme.css';
 
 ReactDOM.render((
     <Router history = { hashHistory }>
