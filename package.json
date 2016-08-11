@@ -9,6 +9,19 @@
     "start-release": "webpack-dev-server --progress --release",
     "production": "webpack --production --release"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-react-constant-elements",
+          "transform-react-inline-elements"
+        ]
+      }
+    }
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
