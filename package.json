@@ -44,8 +44,7 @@
     "datatables.net-select":"^1.2.0",
     "datatables.net-select-bs":"^1.2.0",
     "select2":"^4.0.3",
-    "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
+    "redux": "^3.5.2"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

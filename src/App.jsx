@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
 import Nav from 'react-bootstrap/lib/Nav';
@@ -11,6 +11,9 @@ import fr from 'react-intl/locale-data/fr';
 import en from 'react-intl/locale-data/en';
 import enData from './i18n/en.json';
 import frData from './i18n/fr.json';
+import Bootstrap from './assets/css/bootstrap.css';
+import Bootstraptheme from './assets/css/bootstrap-theme.css';
+import Intl from 'intl';
 
 addLocaleData(fr);
 addLocaleData(en);
@@ -20,7 +23,7 @@ let messagesData = {
     'fr': frData,
     'en': enData,
 };
-class Index extends React.Component {
+export default class App extends Component {
 
     constructor () {
         super()
@@ -75,5 +78,3 @@ class Index extends React.Component {
         )
     }
 }
-
-export default Index;

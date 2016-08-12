@@ -1,21 +1,21 @@
-import React from 'react'
+import React, {Component} from 'react';
 import BootstrapDatePicker from 'bootstrap-datepicker'
 import BootstrapDatePickerCss from 'bootstrap-datepicker/dist/css/bootstrap-datepicker3.css'
 import {FormattedMessage} from 'react-intl'
 import $ from 'jquery'
 
-export default class InputDate extends React.Component {
-    constructor () {
-        super()
-        this.state = {
-            classError: "form-group"
-        }
+export default class InputDate extends Component {
+    state = {
+        classError: "form-group"
     }
 
     componentDidMount() {
         $(this.refs.inputDate).datepicker().on('changeDate', (e) => {
             this.handleChange(e);
         });
+        this.setState({
+            classError: this.props.errors.length > 0 ? "form-group has-error" : "form-group",
+        })
     }
 
     handleChange(event) {
@@ -25,7 +25,6 @@ export default class InputDate extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.setState({
             classError: nextProps.errors.length > 0 ? "form-group has-error" : "form-group",
-            value: nextProps.value
         })
     }
 
